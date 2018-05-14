@@ -1,31 +1,18 @@
-import { handleStatus } from './utils/promise-helpers.js';
-
-var collection = {};
-var elements = document.getElementById("instrumento").elements;
-
+const startApp = () => {getNotas().then(console.log).catch(console.log)};
+const elements = document.querySelectorAll('input');
+const element = document.getElementById("instrumento");
+element.addEventListener('change', startApp);
 
 function getNotas() {
-	return new Promise(function(resolve, reject) {
-		if(elements.length > 0) {
-			for (var i = 0; i<elements.length; i++) {
-				if(elements[i].checked) {
-			    	collection[elements[i].name] = elements[i].value;
-				}
-			}
-	        resolve(collection);
-	    }
-	    else {
-	        reject(Error("quebrou"));
-	    }
-	}
-)};
-
-function startApp() {
-	getNotas()
-		.then(handleStatus)
-		.catch(console.log);
+	let collection = {};
+  
+	return new Promise((resolve, reject) => {
+  	if (!elements.length) return reject(Error('quebrou'));
+    
+    elements.forEach((item, index) => {
+    	if (item.checked) collection[item.name] = item.value;
+    });
+    
+    resolve(collection);
+	});
 }
-
-Array
-    .from(elements)
-    .forEach(element => element.addEventListener('click', startApp));
