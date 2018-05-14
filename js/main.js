@@ -9,7 +9,7 @@ function getNotas() {
 	return new Promise((resolve, reject) => {
   	if (!elements.length) return reject(Error('quebrou'));
  
-    elements.forEach((item, index) => {
+    elements.forEach(item => {
     	if (item.checked) collection[item.name] = item.value;
     });
  
