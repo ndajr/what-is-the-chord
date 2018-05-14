@@ -1,0 +1,1 @@
+export const handleStatus = res => console.log(res);
