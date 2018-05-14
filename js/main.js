@@ -14,5 +14,5 @@ function getNotas() {
     });
  
     resolve(collection);
-	});
+  });
 }
