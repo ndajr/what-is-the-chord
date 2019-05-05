@@ -2,15 +2,22 @@ import React from 'react'
 import { getTonic } from '../app/model'
 import { chordSuffix } from '../app/main'
 
+import styled from 'styled-components'
+
+const StyledChord = styled.div`
+	font-size: 27px;
+	margin-bottom: 20px;
+`
+
 function Chord() {
 	const notes = []
   
   return (
 		<div>
-			<div class="chord">
+			<StyledChord>
 				<span>{ notes.length ? 'Chord: ' + getTonic(notes) : ''}</span>
         <span>{ notes.length ? chordSuffix(notes) : '' }</span>
-			</div>
+			</StyledChord>
 		</div>
 	)
 }

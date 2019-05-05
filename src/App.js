@@ -1,18 +1,18 @@
 import React from 'react'
-import Guitar from './components/Guitar'
+import Container from './components/Container'
+
+import { ThemeProvider } from 'styled-components'
+import theme from './styles/theme'
+import GlobalStyle from './styles/globalStyle'
 
 function App() {
   return (
-    <div class="box">
-      <div class="container">
-        <div class="row row--center row--pad">
-          <div class="header-title">
-            <h1>What Is The Chord</h1>
-          </div>
-        </div>
-        <Guitar />
-      </div>
-    </div>
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyle />
+        <Container />
+      </>
+    </ThemeProvider>
   )
 }
 
