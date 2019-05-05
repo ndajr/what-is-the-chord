@@ -1,11 +1,12 @@
 {
-  "name": "witc",
-  "version": "0.1.0",
+  "name": "what-is-the-chord",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0"
+    "react-scripts": "3.0.0",
+    "styled-components": "^4.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
