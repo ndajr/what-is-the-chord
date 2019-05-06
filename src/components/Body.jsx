@@ -1,5 +1,4 @@
 import React from 'react'
-import body from '../data/body'
 import styled from 'styled-components'
 
 const StyledGuitar = styled.form`
@@ -34,16 +33,15 @@ const StyledInput = styled.input`
 		box-shadow: ${({ theme: { boxShadow } }) => boxShadow.noteSelected };
 	}
 `
-
-function Body() {
+function Body({ body, getNote }) {
   return (
     <div>
-    	<StyledGuitar>
-				{body.map(fieldset => 
+    	<StyledGuitar ref={getNote}>
+				{body.map((fieldset, bodyId) => 
 					<fieldset className="row row--1-13">
-						{fieldset.notes.map(note => 
+						{fieldset.notes.map((note, fieldsetId) => 
 							<div className="row__col">
-								<StyledInput type="radio" name={fieldset.string} value={note} />
+								<StyledInput type="radio" name={fieldset.string} value={note} id={`${bodyId}-${fieldsetId}`} />
 							</div>
 						)}
 					</fieldset>

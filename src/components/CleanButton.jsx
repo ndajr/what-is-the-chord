@@ -24,12 +24,7 @@ const Button = styled.a`
   }
 `
 
-function CleanButton() {
-  function cleanNotes(e) {
-    e.preventDefault()
-    console.log('Button clicked')
-  }
-
+function CleanButton({ cleanNotes }) {
   return (
     <div className="row--sm-right">
       <Button href="#clean" onClick={cleanNotes}>Clean chord</Button>

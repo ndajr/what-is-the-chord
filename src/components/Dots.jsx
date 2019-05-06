@@ -72,10 +72,7 @@ const DoubleDot = styled.div`
 	}
 `
 
-function Dots() {
-	const MAX_NUMBER_DOTS = 13
-	const dots = [...Array(MAX_NUMBER_DOTS).keys()]
-
+function Dots({ frets }) {
 	const renderDot = i => {
 		const isSingle = i !== 0 && i !== 1 && i !== 2 && i !== 11 && i % 2 === 1
 		const isDouble = i === 12 
@@ -88,7 +85,7 @@ function Dots() {
   return (
 		<StyledDots>
 			<div className="row row--1-13">
-				{dots.map((item, i) => 
+				{frets.map((item, i) => 
 					<StyledDotsWrapper>
 						{renderDot(i)}
 					</StyledDotsWrapper>

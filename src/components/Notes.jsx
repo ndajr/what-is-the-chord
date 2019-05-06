@@ -19,8 +19,7 @@ const StyledNote = styled.li`
   text-align: center;
 `
 
-function Notes() {
-	const notes = []
+function Notes({ notes }) {
 	return (
 		<StyledNotes>
 			{ notes.map(item => <StyledNote>{ noteName(item) }</StyledNote>) }

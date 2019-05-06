@@ -22,6 +22,11 @@ const Fret = styled.div`
 const FirstFret = styled.div`
 	position: relative;
 	width: 100%;
+	width: 3px;
+	height: 250px;
+	background-color: ${({ theme: { colors } }) => colors.fretColor1 };
+	border-right: ${({ theme: { colors } }) => `2px solid ${colors.fretColor2}` };
+	position: relative;
 
 	&:before {
 		content: '';
@@ -33,12 +38,19 @@ const FirstFret = styled.div`
 		height: 100%;
 		box-shadow: ${({ theme: { boxShadow } }) => boxShadow.firstFret };
 	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 2px;
+		background-color: ${({ theme: { colors } }) => colors.fretColor3 };
+	}
 `
 
-function Frets() {
-	const MAX_NUMBER_FRETS = 13
-	const frets = [...Array(MAX_NUMBER_FRETS).keys()]
-
+function Frets({ frets }) {
   return (
 		<div className="frets">
 			<div className="row row--1-13">

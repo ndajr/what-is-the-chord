@@ -38,9 +38,7 @@ const String = styled.li`
   }
 `
 
-const strings = [...Array(6).keys()]
-
-function Strings() {
+function Strings({ strings }) {
   return (
     <StyledStrings>
 			{strings.map( item => <String /> )}

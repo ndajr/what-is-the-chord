@@ -9,9 +9,7 @@ const StyledChord = styled.div`
 	margin-bottom: 20px;
 `
 
-function Chord() {
-	const notes = []
-  
+function Chord({ notes }) {
   return (
 		<div>
 			<StyledChord>

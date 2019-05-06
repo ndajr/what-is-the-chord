@@ -1,1 +1,1 @@
-export default [null, null, null, null, null, null]
+export default [-1, -1, -1, -1, -1, -1]

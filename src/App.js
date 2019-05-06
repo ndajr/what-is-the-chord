@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from './components/Container'
+import MainContainer from './containers/MainContainer'
 
 import { ThemeProvider } from 'styled-components'
 import theme from './styles/theme'
@@ -10,7 +10,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        <Container />
+        <MainContainer />
       </>
     </ThemeProvider>
   )
