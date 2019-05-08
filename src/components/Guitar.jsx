@@ -1,7 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
+import { Container, Row } from './Grid'
 
-const Main = styled.form`
+const Main = styled.div`
   margin: 35px 0 30px;
   overflow-x: auto;
 `
@@ -22,8 +23,8 @@ function Guitar({ children }) {
 
   return (
     <Main>
-      <div className="container-hard row">
-        <div className="row--relative">
+      <Container hard>
+        <Row relative>
           <GuitarNeck>
             { Frets }
             { Dots }
@@ -31,8 +32,8 @@ function Guitar({ children }) {
           </GuitarNeck>
 
           { Body }
-        </div>
-      </div>
+        </Row>
+      </Container>
     </Main>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const StyledDots = styled.div`
 	top: 0;
@@ -86,7 +86,7 @@ function Dots({ frets }) {
 		<StyledDots>
 			<div className="row row--1-13">
 				{frets.map((item, i) => 
-					<StyledDotsWrapper>
+					<StyledDotsWrapper key={i}>
 						{renderDot(i)}
 					</StyledDotsWrapper>
 				)}

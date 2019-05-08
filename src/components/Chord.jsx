@@ -1,8 +1,7 @@
 import React from 'react'
-import { getTonic } from '../app/model'
-import { chordSuffix } from '../app/main'
+import { getTonic, head } from '../helpers'
 
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const StyledChord = styled.div`
 	font-size: 27px;
@@ -10,11 +9,15 @@ const StyledChord = styled.div`
 `
 
 function Chord({ notes }) {
+	const filteredNotes = notes.filter(note => note !== -1)
+	const tonic = getTonic(head(filteredNotes))
+
   return (
 		<div>
 			<StyledChord>
-				<span>{ notes.length ? 'Chord: ' + getTonic(notes) : ''}</span>
-        <span>{ notes.length ? chordSuffix(notes) : '' }</span>
+				{ tonic &&
+					<span>{ `Chord: ${tonic}`}</span>
+				}
 			</StyledChord>
 		</div>
 	)

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const StyledGuitar = styled.form`
 	position: absolute;
@@ -33,21 +33,19 @@ const StyledInput = styled.input`
 		box-shadow: ${({ theme: { boxShadow } }) => boxShadow.noteSelected };
 	}
 `
-function Body({ body, getNote }) {
+function Body({ bodyData, parseNotes }) {
   return (
-    <div>
-    	<StyledGuitar ref={getNote}>
-				{body.map((fieldset, bodyId) => 
-					<fieldset className="row row--1-13">
-						{fieldset.notes.map((note, fieldsetId) => 
-							<div className="row__col">
-								<StyledInput type="radio" name={fieldset.string} value={note} id={`${bodyId}-${fieldsetId}`} />
-							</div>
-						)}
-					</fieldset>
-				)}
-			</StyledGuitar>
-    </div>
+		<StyledGuitar ref={parseNotes}>
+			{bodyData.map((fieldset, bodyId) => 
+				<fieldset className="row row--1-13" key={`body-${bodyId}`}>
+					{fieldset.notes.map((note, fieldsetId) => 
+						<div className="row__col" key={`fieldset-${fieldsetId}`}>
+							<StyledInput type="radio" name={fieldset.string} value={note} id={`${bodyId}-${note}`} />
+						</div>
+					)}
+				</fieldset>
+			)}
+		</StyledGuitar>
   )
 }
 

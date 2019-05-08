@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const Fret = styled.div`
 	width: 3px;
@@ -55,7 +55,7 @@ function Frets({ frets }) {
 		<div className="frets">
 			<div className="row row--1-13">
 				{frets.map((item, i) => 
-					<div className="row__col">
+					<div className="row__col" key={i}>
 						{ i === 0 ? <FirstFret /> : <Fret /> }
 					</div>
 				)}

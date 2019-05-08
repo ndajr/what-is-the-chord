@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const HeaderTitle = styled.div`
   padding: 0 20px;
@@ -7,7 +7,7 @@ const HeaderTitle = styled.div`
 
 function Header({ title }) {
   return (
-    <div class="row row--center row--pad">
+    <div className="row row--center row--pad">
       <HeaderTitle>
         <h1>{ title }</h1>
       </HeaderTitle>

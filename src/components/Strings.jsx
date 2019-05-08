@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const StyledStrings = styled.ul`
   position: absolute;
@@ -41,7 +41,7 @@ const String = styled.li`
 function Strings({ strings }) {
   return (
     <StyledStrings>
-			{strings.map( item => <String /> )}
+			{strings.map((item, i) => <String key={i} />)}
 		</StyledStrings>
   )
 }

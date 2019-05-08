@@ -1,0 +1,2 @@
+export const UPDATE_NOTES = 'UPDATE_NOTES'
+export const CLEAN_NOTES = 'CLEAN_NOTES'
