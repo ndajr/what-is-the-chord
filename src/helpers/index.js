@@ -20,8 +20,16 @@ export const nodeToArray = nodes => {
 
 export const head = arr => arr[0] 
 
-export const getTonic = note => {
+export const getNamedTonic = note => {
   if(!note) return ''
 
   return dictionary[note] || ''
+}
+
+export const getNamedChord = noteNumber => {
+  return dictionary[noteNumber]
+}
+
+export const getNamedChordList = (arr) => {
+  return arr.map(getNamedChord)
 }

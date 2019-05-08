@@ -1,5 +1,5 @@
 import React from 'react'
-import { getTonic, head } from '../helpers'
+import { getNamedTonic, head } from '../helpers'
 
 import styled from 'styled-components/macro'
 
@@ -10,7 +10,7 @@ const StyledChord = styled.div`
 
 function Chord({ notes }) {
 	const filteredNotes = notes.filter(note => note !== -1)
-	const tonic = getTonic(head(filteredNotes))
+	const tonic = getNamedTonic(head(filteredNotes))
 
   return (
 		<div>

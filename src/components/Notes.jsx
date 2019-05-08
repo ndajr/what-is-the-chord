@@ -1,5 +1,5 @@
 import React from 'react'
-import { noteName } from '../app/model'
+import { getNamedChord } from '../helpers'
 
 import styled from 'styled-components/macro'
 
@@ -23,7 +23,7 @@ function Notes({ notes }) {
 	const filteredNotes = notes.filter(note => note !== -1)
 	return (
 		<StyledNotes>
-			{ filteredNotes.map((item, i) => <StyledNote key={i}>{ noteName(item) }</StyledNote>) }
+			{ filteredNotes.map((item, i) => <StyledNote key={i}>{ getNamedChord(item) }</StyledNote>) }
 		</StyledNotes>
 	)
 }
