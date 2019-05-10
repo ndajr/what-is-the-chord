@@ -27,12 +27,12 @@ const StyledInput = styled.input`
 	}
 `
 
-function InputRadio({ bodyId, fieldset, fieldsetId, note }) {
+function BodyInput({ stringNumber, note }) {
   return (
-    <div className="row__col" key={`fieldset-${fieldsetId}`}>
-      <StyledInput type="radio" name={fieldset.string} value={note} id={`${bodyId}-${note}`} />
+    <div className="row__col">
+      <StyledInput type="radio" name={stringNumber} value={note} id={`${stringNumber}-${note}`} />
     </div>
   )
 }
 
-export default InputRadio
+export default BodyInput

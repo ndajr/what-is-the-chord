@@ -18,11 +18,11 @@ export const nodeToArray = nodes => {
   return chordMap.reverse()
 }
 
-export const head = arr => arr[0] 
+export const head = arr => arr[0]
+
+export const tail = arr => arr[arr.length-1] 
 
 export const getNamedTonic = note => {
-  if(!note) return ''
-
   return dictionary[note] || ''
 }
 
@@ -32,4 +32,11 @@ export const getNamedChord = noteNumber => {
 
 export const getNamedChordList = (arr) => {
   return arr.map(getNamedChord)
+}
+
+export const numberInRangeUpTo12 = i => {
+  if(i === 0) return 0
+  const restBy12 = i % 12
+  const response = restBy12 === 0 ? 12 : restBy12
+  return response
 }

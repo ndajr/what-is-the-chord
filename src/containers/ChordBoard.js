@@ -14,6 +14,8 @@ const Output = styled.div`
 
 function ChordContainer() {
   const [{ notes }, dispatch] = useStateValue()
+  console.log(notes)
+  const selectedNotes = notes.filter(note => note !== -1)
 
   const cleanNotes = () => {
     dispatch({ type: CLEAN_NOTES})
@@ -26,10 +28,10 @@ function ChordContainer() {
           <div className="row__col row__xs-12">
             <div className="row row--1">
               <div className="row__col">
-                <Notes notes={notes}/>
+                <Notes notes={selectedNotes}/>
               </div>
               <div className="row__col">
-                <Chord notes={notes}/>
+                <Chord notes={selectedNotes}/>
               </div>
             </div>
           </div>

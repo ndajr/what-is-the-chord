@@ -1,0 +1,1 @@
+export default ['empty', 'empty', 'empty', 'single', 'empty', 'single', 'empty', 'single', 'empty', 'single', 'empty', 'empty', 'double']

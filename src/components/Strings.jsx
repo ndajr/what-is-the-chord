@@ -17,7 +17,6 @@ const String = styled.li`
   margin-bottom: 34px;
   border-bottom: 2px solid rgba(149, 137, 99, 0.75);
   box-sizing: border-box;
-
   &:nth-child(1) {
     height: 3px;
   }
@@ -45,5 +44,4 @@ function Strings({ strings }) {
 		</StyledStrings>
   )
 }
-
 export default Strings

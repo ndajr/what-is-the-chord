@@ -20,10 +20,11 @@ const StyledNote = styled.li`
 `
 
 function Notes({ notes }) {
-	const filteredNotes = notes.filter(note => note !== -1)
 	return (
 		<StyledNotes>
-			{ filteredNotes.map((item, i) => <StyledNote key={i}>{ getNamedChord(item) }</StyledNote>) }
+			{notes.map((item, i) => 
+				<StyledNote key={i}>{ getNamedChord(item) }</StyledNote>) 
+			}
 		</StyledNotes>
 	)
 }

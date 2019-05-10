@@ -9,13 +9,12 @@ const StyledChord = styled.div`
 `
 
 function Chord({ notes }) {
-	const filteredNotes = notes.filter(note => note !== -1)
-	const tonic = getNamedTonic(head(filteredNotes))
+	const tonic = getNamedTonic(head(notes))
 
   return (
 		<div>
 			<StyledChord>
-				{ tonic &&
+				{tonic &&
 					<span>{ `Chord: ${tonic}`}</span>
 				}
 			</StyledChord>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import InputRadio from './InputRadio'
+import BodyString from './BodyInput'
 
 const StyledGuitar = styled.form`
 	position: absolute;
@@ -10,20 +10,11 @@ const StyledGuitar = styled.form`
 	height: 100%;
 `
 
-function Body({ bodyData, parseNotes }) {
+function Body({ strings, parseNotes }) {
   return (
 		<StyledGuitar ref={parseNotes}>
-			{bodyData.map((fieldset, bodyId) => 
-				<fieldset className="row row--1-13" key={`body-${bodyId}`}>
-					{fieldset.notes.map((note, fieldsetId) => 
-						<InputRadio 
-							bodyId={bodyId} 
-							fieldset={fieldset} 
-							fieldsetId={fieldsetId} 
-							note={note} 
-						/>	
-					)}
-				</fieldset>
+			{strings.map((notes, stringNumber) => 
+				<BodyString stringNumber={stringNumber} notes={notes} key={`string-${stringNumber}`}/>
 			)}
 		</StyledGuitar>
   )

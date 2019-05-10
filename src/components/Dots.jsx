@@ -1,6 +1,6 @@
 import React from 'react'
-
 import styled from 'styled-components/macro'
+import { numberInRangeUpTo12 } from '../helpers'
 
 const StyledDots = styled.div`
 	top: 0;
@@ -72,14 +72,17 @@ const DoubleDot = styled.div`
 	}
 `
 
-function Dots({ frets }) {
+function Dots({ dotsStyle, frets }) {
+	const dotMap = {
+		empty: () => (<EmptyDot />),
+		single: () => (<SingleDot />),
+		double: () => (<DoubleDot />),
+	}
+
 	const renderDot = i => {
-		const isSingle = i !== 0 && i !== 1 && i !== 2 && i !== 11 && i % 2 === 1
-		const isDouble = i === 12 
-		
-		if(isSingle) return (<SingleDot />)
-		if(isDouble) return (<DoubleDot />)
-		return (<EmptyDot />)
+		const fretNumber = numberInRangeUpTo12(i)
+		const dotStyle = dotsStyle[fretNumber]
+		return dotMap[dotStyle]()
 	}
 
   return (

@@ -8,6 +8,7 @@ import Body from '../components/Body'
 import Frets from '../components/Frets'
 import Dots from '../components/Dots'
 import Strings from '../components/Strings'
+import dotsStyle from '../data/dotsStyle'
 
 const Main = styled(Container)`
   margin: 35px 0 30px;
@@ -34,10 +35,10 @@ const Wrapper = ({ children }) => (
 function GuitarContainer() {
   const [, dispatch] = useStateValue()
   
-  const NUMBER_FRETS = 13
-  const NUMBER_STRINGS = 6
-  const frets = [...Array(NUMBER_FRETS).keys()]
-  const strings = [...Array(NUMBER_STRINGS).keys()]
+  const NUMBER_OF_STRINGS = 6
+  const NUMBER_OF_FRETS = 13
+  const strings = [...Array(NUMBER_OF_STRINGS).keys()]
+  const frets = [...Array(NUMBER_OF_FRETS).keys()]
 
   const parseNotes = el => {
     window.onload = () => {
@@ -51,12 +52,13 @@ function GuitarContainer() {
   return (
     <Wrapper>
       <GuitarNeck>
-        <Frets frets={frets}/>
-        <Dots frets={frets}/>
-        <Strings strings={strings}/>
+        <Frets frets={ frets }/>
+        <Dots frets={ frets } dotsStyle={ dotsStyle }/>
+        <Strings strings={ strings }/>
       </GuitarNeck>
   
-      <Body bodyData={bodyData} parseNotes={parseNotes} />
+      <Body strings={ bodyData } parseNotes={ parseNotes }/>
+
     </Wrapper>
   )
 }
