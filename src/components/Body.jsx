@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import BodyString from './BodyInput'
+import BodyString from './BodyString'
 
 const StyledGuitar = styled.form`
 	position: absolute;

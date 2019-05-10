@@ -1,11 +1,11 @@
 import React from 'react'
-import InputRadio from './InputRadio'
+import BodyInput from './BodyInput'
 
 function BodyString({ stringNumber, notes }) {
   return (
 		<fieldset className="row row--1-13" key={`body-${stringNumber}`} id={notes.stringNumber}>
 			{notes.map((note, noteNumber) => 
-				<InputRadio 
+				<BodyInput 
 					stringNumber={stringNumber} 
 					note={note}
 					key={`${stringNumber}-${noteNumber}`}
