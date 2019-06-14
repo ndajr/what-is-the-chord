@@ -42,5 +42,8 @@ export default {
     body: 'inset -1px 0px 11px 0px rgba(0, 0, 0, 0.75)',
     noteSelected: '0px 3px 5px 0px rgba(0, 0, 0, 0.75)',
     firstFret: '-6px 0px 8px 1px #b99261'
+  },
+  dimensions: {
+    maxWidth: '970px'
   }
 }

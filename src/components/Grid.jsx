@@ -4,10 +4,10 @@ export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
-  max-width: 970px;
+  max-width: ${({ theme: { dimensions } }) => dimensions.maxWidth };
   width: 100%;
   ${({ hard }) => hard && `
-    width: 970px;
+    width: ${({ theme: { dimensions } }) => dimensions.maxWidth };
   `}
 `
 
